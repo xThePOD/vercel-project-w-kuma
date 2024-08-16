@@ -36,7 +36,7 @@ app.frame('/secondframe', (c) => {
     action: '/thirdframe',
     image: "https://amethyst-able-sawfish-36.mypinata.cloud/ipfs/QmNafpwmqcjCCGxLobLMWUFBKPx44G6BY6MJdJgME1NsgM",
     intents: [
-      <Button>NEXT</Button>,
+      <Button>Next</Button>,
     ],
   })
 })
@@ -49,7 +49,7 @@ app.frame('/thirdframe', (c) => {
     image: "https://amethyst-able-sawfish-36.mypinata.cloud/ipfs/QmaM1Nz1CQoXJkn1Hs2A66Cex52MRgSDzR849nFHEEK7zx",
     intents: [
       <Button action="/secondframe">Back</Button>,
-      <Button>NEXT</Button>,
+      <Button>Next</Button>,
     ],
   })
 })
@@ -62,7 +62,7 @@ app.frame('/fourthframe', (c) => {
     image: "https://amethyst-able-sawfish-36.mypinata.cloud/ipfs/QmfBj4rQfD6D4YFHtY8FFvcLneXfGhh9tnecGxkt9gruxk",
     intents: [
       <Button action="/thirdframe">Back</Button>,
-      <Button>NEXT</Button>,
+      <Button>Next</Button>,
     ],
   })
 })
@@ -75,7 +75,7 @@ app.frame('/fifthframe', (c) => {
     image: "https://amethyst-able-sawfish-36.mypinata.cloud/ipfs/QmTne6LRw5UtTqQ2hutTqWgCqdaoNAjEwPLG9gpYYzyFcx",
     intents: [
       <Button action="/fourthframe">Back</Button>,
-      <Button>NEXT</Button>,
+      <Button>Next</Button>,
     ],
   })
 })
@@ -88,7 +88,7 @@ app.frame('/sixthframe', (c) => {
     image: "https://amethyst-able-sawfish-36.mypinata.cloud/ipfs/QmTBstpjaj6jim6V4EbGxybf2yfbN2TjfSggScrxuPfuC4",
     intents: [
       <Button action="/fifthframe">Back</Button>,
-      <Button>NEXT</Button>,
+      <Button>Next</Button>,
     ],
   })
 })
@@ -101,7 +101,7 @@ app.frame('/seventhframe', (c) => {
     image: "https://amethyst-able-sawfish-36.mypinata.cloud/ipfs/QmbYbP9gEPzErWcUZ5YtBXaSvqC7XxixBBYCUjq6sCYy42",
     intents: [
       <Button action="/sixthframe">Back</Button>,
-      <Button>NEXT</Button>,
+      <Button>Next</Button>,
     ],
   })
 })
