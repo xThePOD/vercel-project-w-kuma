@@ -14,55 +14,110 @@ export const app = new Frog({
   basePath: '/api',
   // Supply a Hub to enable frame verification.
  hub: neynar({ apiKey: '0D6B6425-87D9-4548-95A2-36D107C12421' }),
- title: 'vercel frame'
+ title: 'POD LABS Proposal'
 })
 
 app.frame('/', (c) => {
   const { buttonValue, inputText, status } = c
   const fruit = inputText || buttonValue
   return c.res({
-    image: (
-      <div
-        style={{
-          alignItems: 'center',
-          background:
-            status === 'response'
-              ? 'linear-gradient(to right, #432889, #17101F)'
-              : 'black',
-          backgroundSize: '100% 100%',
-          display: 'flex',
-          flexDirection: 'column',
-          flexWrap: 'nowrap',
-          height: '100%',
-          justifyContent: 'center',
-          textAlign: 'center',
-          width: '100%',
-        }}
-      >
-        <div
-          style={{
-            color: 'white',
-            fontSize: 60,
-            fontStyle: 'normal',
-            letterSpacing: '-0.025em',
-            lineHeight: 1.4,
-            marginTop: 30,
-            padding: '0 120px',
-            whiteSpace: 'pre-wrap',
-          }}
-        >
-          {status === 'response'
-            ? `Nice choice.${fruit ? ` ${fruit.toUpperCase()}!!` : ''}`
-            : 'Welcome!'}
-        </div>
-      </div>
-    ),
+    action: '/secondframe',
+    image: "https://amethyst-able-sawfish-36.mypinata.cloud/ipfs/QmQ3FWNZrxPQ2eL7Yh7iK3ZiVPCwXprFT5U26ZkopdDW8K",
     intents: [
-      <TextInput placeholder="Enter custom fruit..." />,
-      <Button value="apples">Apples</Button>,
-      <Button value="oranges">Oranges</Button>,
-      <Button value="bananas">Bananas</Button>,
-      status === 'response' && <Button.Reset>Reset</Button.Reset>,
+      <Button>ENTER</Button>,
+    ],
+  })
+})
+
+app.frame('/secondframe', (c) => {
+  const { buttonValue, inputText, status } = c
+  const fruit = inputText || buttonValue
+  return c.res({
+    action: '/thirdframe',
+    image: "https://amethyst-able-sawfish-36.mypinata.cloud/ipfs/QmNafpwmqcjCCGxLobLMWUFBKPx44G6BY6MJdJgME1NsgM",
+    intents: [
+      <Button>NEXT</Button>,
+    ],
+  })
+})
+
+app.frame('/thirdframe', (c) => {
+  const { buttonValue, inputText, status } = c
+  const fruit = inputText || buttonValue
+  return c.res({
+    action: '/fourthframe',
+    image: "https://amethyst-able-sawfish-36.mypinata.cloud/ipfs/QmaM1Nz1CQoXJkn1Hs2A66Cex52MRgSDzR849nFHEEK7zx",
+    intents: [
+      <Button action="/secondframe">Back</Button>,
+      <Button>NEXT</Button>,
+    ],
+  })
+})
+
+app.frame('/fourthframe', (c) => {
+  const { buttonValue, inputText, status } = c
+  const fruit = inputText || buttonValue
+  return c.res({
+    action: '/fifthframe',
+    image: "https://amethyst-able-sawfish-36.mypinata.cloud/ipfs/QmfBj4rQfD6D4YFHtY8FFvcLneXfGhh9tnecGxkt9gruxk",
+    intents: [
+      <Button action="/thirdframe">Back</Button>,
+      <Button>NEXT</Button>,
+    ],
+  })
+})
+
+app.frame('/fifthframe', (c) => {
+  const { buttonValue, inputText, status } = c
+  const fruit = inputText || buttonValue
+  return c.res({
+    action: '/sixthframe',
+    image: "https://amethyst-able-sawfish-36.mypinata.cloud/ipfs/QmTne6LRw5UtTqQ2hutTqWgCqdaoNAjEwPLG9gpYYzyFcx",
+    intents: [
+      <Button action="/fourthframe">Back</Button>,
+      <Button>NEXT</Button>,
+    ],
+  })
+})
+
+app.frame('/sixthframe', (c) => {
+  const { buttonValue, inputText, status } = c
+  const fruit = inputText || buttonValue
+  return c.res({
+    action: '/seventhframe',
+    image: "https://amethyst-able-sawfish-36.mypinata.cloud/ipfs/QmTBstpjaj6jim6V4EbGxybf2yfbN2TjfSggScrxuPfuC4",
+    intents: [
+      <Button action="/fifthframe">Back</Button>,
+      <Button>NEXT</Button>,
+    ],
+  })
+})
+
+app.frame('/seventhframe', (c) => {
+  const { buttonValue, inputText, status } = c
+  const fruit = inputText || buttonValue
+  return c.res({
+    action: '/eighthframe',
+    image: "https://amethyst-able-sawfish-36.mypinata.cloud/ipfs/QmbYbP9gEPzErWcUZ5YtBXaSvqC7XxixBBYCUjq6sCYy42",
+    intents: [
+      <Button action="/sixthframe">Back</Button>,
+      <Button>NEXT</Button>,
+    ],
+  })
+})
+
+app.frame('/eighthframe', (c) => {
+  const { buttonValue, inputText, status } = c
+  const fruit = inputText || buttonValue
+  return c.res({
+    action: '/',
+    image: "https://amethyst-able-sawfish-36.mypinata.cloud/ipfs/QmTzwzQpJXPtCXPDkjPLeU6BokMvqgKYYqh2QVFt8DEaE4",
+    intents: [
+      <Button action="/sixthframe">Back</Button>,
+      <Button.Link href="https://explorer.gitcoin.co/#/round/1329/9/191">Proposal</Button.Link>,
+      <Button.Link href="https://x.com/xThePod">X</Button.Link>,
+      <Button.Reset>Restart</Button.Reset>,
+
     ],
   })
 })
