@@ -113,7 +113,7 @@ app.frame('/eighthframe', (c) => {
     action: '/',
     image: "https://amethyst-able-sawfish-36.mypinata.cloud/ipfs/QmTzwzQpJXPtCXPDkjPLeU6BokMvqgKYYqh2QVFt8DEaE4",
     intents: [
-      <Button action="/sixthframe">Back</Button>,
+      <Button action="/seventhframe">Back</Button>,
       <Button.Link href="https://explorer.gitcoin.co/#/round/1329/9/191">Proposal</Button.Link>,
       <Button.Link href="https://x.com/xThePod">X</Button.Link>,
       <Button.Reset>Restart</Button.Reset>,
